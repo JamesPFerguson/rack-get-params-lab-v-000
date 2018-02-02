@@ -26,6 +26,7 @@ class Application
       item = req.GET["item"]
       if @@items.include?(item)
         @@items << item
+        resp.write "added #{item}"
       else
         resp.write "Item not included"
       end
