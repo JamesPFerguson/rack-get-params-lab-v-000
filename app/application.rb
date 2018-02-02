@@ -23,7 +23,7 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      item = req.get["item"]
+      item = req.GET["item"]
       if @@items.include?(item)
         @@items << item
       else
