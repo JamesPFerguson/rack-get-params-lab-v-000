@@ -23,6 +23,12 @@ class Application
         end
       end
     elsif req.path.match(/add/)
+      item = req.get["item"]
+      if @@items.include?(item)
+        @@items << item
+      else
+        resp.write "Item not included"
+      end
     else
       resp.write "Path Not Found"
     end
